@@ -1,0 +1,64 @@
+// C program to store information of students using structure
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//To create student structure
+struct student {
+       char name[50];
+       char USN[20];
+       int semester;
+};
+
+//driver code
+int main()
+{
+    int i = 0 , n = 5, stFound = 0;
+    char USN[20];
+    
+    struct student *student;
+    printf("Enter the no of students in the list :");
+    scanf("%d" , &n);
+// allocate memory for students datastructure
+student = (struct student *) malloc (n * sizeof(struct student));
+// Read the 'n' students details
+for (i=0;i<n;i++)
+{
+printf("Enter the student %d details : \n" , i+1);
+//get the students data
+printf("USN : ");
+scanf("%s" , student[i].USN);
+printf("Name : ");
+scanf("%s" , student[i].name);
+printf("Semester : ");
+scanf("%d" , student[i].semester);
+}
+//print the students information
+printf("Student records :\n\n");
+for(i=0;i<n;i++)
+{
+                printf("\tUSN = %s\n", student[i].USN);
+                printf("\tName = %s\n", student[i].name);
+                printf("\tsemester = %s\n", student[i].semester);
+                printf("\n");
+}
+printf("Enter the USN to be searched for : ");
+scanf("%s" ,USN);
+
+for(i=0;i<n;i++)
+{
+ if(!strcmp(usn,student[i].USN)
+ printf("\tstudent with USN = %s is (are)\n" , student[i].USN);
+ printf("\tUSN = %s\n" , student[i].USN);
+ printf("\tname = %s\n" , student[i].name);
+ printf("\tsemester = %s\n" , student[i].semester);
+ print("\n");
+ 
+ stfound=1; // use this flag to print when no student
+ //record found in the list
+}
+}
+if(stfound == 0)
+printf("\t There size No student found with USN = %s\n" ,usn);
+return 0;
+}
+                
