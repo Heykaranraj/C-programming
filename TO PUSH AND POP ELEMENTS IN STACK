@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<limits.h>
+#define SIZE 100
+int stack[SIZE];
+int top = -1;
+void push(int element);
+int pop();
+int main()
+{
+    int choice;
+    int data;
+    while (1)
+    {
+          printf("------------------------------------\n");
+          printf("Stack implementation program");
+          printf("------------------------------------\n");
+          printf("1. Push\n");
+          printf("2. Pop\n");
+          printf("3. Size\n");
+          printf("------------------------------------\n");
+          printf("Enter your choice");
+          scanf("%d" , &choice);
+          switch(choice)
+          {
+                        case 1:
+                             printf("Enter the data you want to push into the stack");
+                             scanf("%d" , &data);
+                             push(data);
+                             break;
+                        case 2:
+                             data = pop();
+                             if(data != INT_MIN)
+                             printf("data => %d\n" , data);
+                             break;
+                        case 3:
+                             printf("stack size: %d\n" , top + 1 );
+                             break;
+                        default:
+                                printf("Enter a valid choice\n");
+                                
+                                }
+                                printf("\n");
+                                }
+                                return 0;
+                                }
+                                void push(int element)
+                                {
+                                     if (top >= SIZE -1 ) 
+                                {
+                                       printf("stack overflow, cant add more elements to stack.\n");
+                                       return;
+                                       }
+                                       top++;
+                                       stack[top] = element;
+                                       printf("data pushed to stack\n");
+                                       }
+                                       int pop()
+                                       {
+                                           if(top<0)
+                                           {
+                                                    printf("stack is empty.\n");
+                                                    printf("hence return INT_MIN as an indication of EMPTY stack.\n");
+                                                    return INT_MIN;
+                                                    }
+                                return stack[top--];
+                                }
+          
